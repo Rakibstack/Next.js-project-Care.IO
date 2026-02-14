@@ -11,7 +11,7 @@ const Footer = () => {
 
         {/* About */}
         <div>
-          <h3 className="text-2xl font-bold text-white mb-3">Care.xyz</h3>
+          <h3 className="text-2xl font-bold text-white mb-3">Care.IO</h3>
           <p className="text-gray-300 text-sm">
             Trusted baby, elderly & sick care services at your doorstep. 
             Professional, verified caregivers always ready for your family.
@@ -34,7 +34,7 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold text-white mb-3">Contact Us</h4>
           <p className="text-sm hover:text-indigo-400 transition cursor-pointer">
-            support@care.xyz
+            support@care.IO
           </p>
           <p className="text-sm mt-1 hover:text-indigo-400 transition cursor-pointer">
             +880 1234 567890
@@ -45,7 +45,7 @@ const Footer = () => {
 
       {/* Bottom bar */}
       <div className="text-center text-sm border-t border-indigo-800 py-4 text-gray-400">
-        © {new Date().getFullYear()} Care.xyz — All rights reserved.
+        © {new Date().getFullYear()} Care.IO — All rights reserved.
       </div>
     </footer>
   );
