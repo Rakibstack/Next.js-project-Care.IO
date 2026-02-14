@@ -1,5 +1,4 @@
 
-
 import Link from "next/link";
 
 const serviceData = {
@@ -75,7 +74,7 @@ const ServiceDetailsPage = async ({ params }) => {
                 ৳{service.price} / hour
               </span>
               <Link
-                href={`/booking/${params.service_id}`}
+                href={`/booking/${id}`}
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-sky-500 text-white font-medium hover:shadow-lg transition"
               >
                 Book Now
@@ -95,7 +94,8 @@ const ServiceDetailsPage = async ({ params }) => {
       </section>
 
       {/* Optional More Info / Testimonials */}
-      <section className="max-w-7xl mx-auto px-4 py-20">
+    <div className="bg-indigo-50">
+        <section className="max-w-7xl  mx-auto px-4 py-20">
         <h2 className="text-3xl font-semibold text-gray-900 mb-8">
           Why choose this service?
         </h2>
@@ -114,6 +114,7 @@ const ServiceDetailsPage = async ({ params }) => {
           </div>
         </div>
       </section>
+    </div>
 
     </>
   );

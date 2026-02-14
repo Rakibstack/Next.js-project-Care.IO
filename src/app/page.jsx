@@ -4,25 +4,32 @@ import { motion } from "framer-motion";
 import ServiceCard from "@/component/ServiceCard";
 import Link from "next/link";
 import { fadeUp, fadeIn, stagger } from "@/lib/animations";
+import { FaBaby, FaUserNurse, FaHeartbeat } from "react-icons/fa";
 
-const services = [
+export const services = [
   {
     id: "baby-care",
     title: "Baby Care",
     description: "Loving and trained caregivers for your child’s safety.",
     price: 300,
+    icon: FaBaby,
+    color: "text-pink-500 bg-pink-100",
   },
   {
     id: "elderly-care",
     title: "Elderly Care",
     description: "Respectful, compassionate care for seniors at home.",
     price: 350,
+    icon: FaUserNurse,
+    color: "text-indigo-500 bg-indigo-100",
   },
   {
     id: "sick-care",
     title: "Sick Care",
     description: "Professional assistance during illness and recovery.",
     price: 400,
+    icon: FaHeartbeat,
+    color: "text-rose-500 bg-rose-100",
   },
 ];
 
