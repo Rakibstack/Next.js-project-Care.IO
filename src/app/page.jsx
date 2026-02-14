@@ -1,5 +1,4 @@
-import Footer from "@/component/Footer";
-import Navbar from "@/component/Navber";
+
 import ServiceCard from "@/component/ServiceCard";
 import Link from "next/link";
 
@@ -32,7 +31,6 @@ const services = [
 export default function Home() {
   return (
     <>
-      <Navbar />
 
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-sky-50">
@@ -138,7 +136,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }
