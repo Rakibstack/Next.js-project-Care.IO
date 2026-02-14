@@ -14,7 +14,7 @@ const serviceData = {
       "Daily progress report",
     ],
     price: 300,
-    image: "https://images.unsplash.com/photo-1588776814546-1f6c27bb85e1?auto=format&fit=crop&w=800&q=80",
+    image: "https://i.ibb.co.com/v6Zn8vM2/pretty-sister-spending-time-with-her-baby-brother-sitting-floor-bedroom-beautiful-young-babysitter-p.jpg",
   },
   "elderly-care": {
     title: "Elderly Care",
@@ -27,7 +27,7 @@ const serviceData = {
       "Friendly companionship",
     ],
     price: 350,
-    image: "https://images.unsplash.com/photo-1588776814546-1f6c27bb85e1?auto=format&fit=crop&w=800&q=80",
+    image: "https://i.ibb.co.com/QR36DJn/young-asian-female-nurse-care-giver-helping-asian-senior-old-man-with-mobility-walker-living-area-nu.jpg",
   },
   "sick-care": {
     title: "Sick Care",
@@ -40,7 +40,7 @@ const serviceData = {
       "Peaceful recovery environment",
     ],
     price: 400,
-    image: "https://images.unsplash.com/photo-1588776814546-1f6c27bb85e1?auto=format&fit=crop&w=800&q=80",
+    image: "https://i.ibb.co.com/v6f0vCcY/smiling-doctor-nurse-with-young-patient-hospital.jpg",
   },
 };
 
