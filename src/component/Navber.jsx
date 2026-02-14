@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import SigninButton from "./SigninButton";
+
 
 const Navbar = () => {
   return (
@@ -28,12 +30,7 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <Link
-            href="/login"
-            className="px-4 py-2 rounded-full border border-gray-300 hover:border-indigo-400 transition"
-          >
-            Login
-          </Link>
+          <SigninButton></SigninButton>
 
           <Link
             href="/register"
