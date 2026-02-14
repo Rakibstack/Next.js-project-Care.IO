@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-indigo-900 via-sky-900 to-indigo-900 text-gray-300 mt-16">
+    <footer className="bg-gradient-to-r from-indigo-900 via-sky-900 to-indigo-900 text-gray-300 ">
       
       {/* Main grid */}
-      <div className="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-4 py-18 grid md:grid-cols-3 gap-10">
 
         {/* About */}
         <div>

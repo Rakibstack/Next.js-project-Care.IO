@@ -33,7 +33,7 @@ export default function Home() {
     <>
 
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-sky-50">
+      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-sky-100">
         {/* Decorative blobs */}
         <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-indigo-300/30 rounded-full blur-3xl"></div>
         <div className="absolute top-40 -right-32 w-[500px] h-[500px] bg-sky-300/30 rounded-full blur-3xl"></div>
@@ -51,7 +51,7 @@ export default function Home() {
             </h1>
 
             <p className="text-gray-600 max-w-xl mb-10">
-              Care.xyz helps you find reliable caregivers for babies, elderly
+              Care.IO helps you find reliable caregivers for babies, elderly
               family members, and sick loved ones — right at your home.
             </p>
 
@@ -66,8 +66,8 @@ export default function Home() {
 
               <Link
                 href="/register"
-                className="bg-white/80 backdrop-blur border border-gray-200 px-7 py-3 
-                rounded-full text-sm hover:border-indigo-300 transition"
+                className="bg-white/80 text-gray-500 backdrop-blur border border-gray-200 px-7 py-3 
+                rounded-full text-sm hover:border-indigo-400 transition"
               >
                 Get Started
               </Link>
@@ -77,7 +77,7 @@ export default function Home() {
           {/* Info Card */}
           <div className="bg-white/80 backdrop-blur rounded-3xl p-10 shadow-xl border border-white">
             <h3 className="text-lg font-medium mb-6 text-gray-900">
-              Why families trust Care.xyz
+              Why families trust Care.IO
             </h3>
 
             <ul className="space-y-4 text-gray-600 text-sm">
@@ -91,7 +91,7 @@ export default function Home() {
       </section>
 
       {/* ================= STATS ================= */}
-      <section className="bg-white">
+      <section className="bg-indigo-100 py-10">
         <div className="max-w-7xl mx-auto px-4 py-20 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
           <div className="rounded-2xl bg-indigo-50 p-6">
             <p className="text-3xl font-semibold text-indigo-600">5K+</p>
@@ -115,11 +115,11 @@ export default function Home() {
       {/* ================= SERVICES ================= */}
       <section
         id="services"
-        className="bg-gradient-to-b from-white to-indigo-50 py-28"
+        className="bg-gradient-to-b from-white to-indigo-50 py-20"
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-3">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">
               Our Care Services
             </h2>
             <p className="text-gray-600">
