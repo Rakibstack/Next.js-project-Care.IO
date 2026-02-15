@@ -16,7 +16,8 @@ export const registerUser = async (formdata) => {
   const newUser = {
     ...formdata,
     password: hashedPassword,
-    createdAt: new Date().toISOString(),
+    createdAt: new Date().toLocaleString(),
+    role: "user",
   };
 
   const result = await Connectdb("users").insertOne(newUser);  

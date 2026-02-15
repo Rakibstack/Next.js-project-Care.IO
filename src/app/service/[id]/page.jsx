@@ -74,7 +74,7 @@ const ServiceDetailsPage = async ({ params }) => {
                 ৳{service.price} / hour
               </span>
               <Link
-                href={`/booking/${id}`}
+                href={`/booking-service/${id}`}
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-sky-500 text-white font-medium hover:shadow-lg transition"
               >
                 Book Now

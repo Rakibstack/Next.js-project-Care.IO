@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import SigninButton from "./SigninButton";
+import AuthButton from "./AuthButton";
 
 
 const Navbar = () => {
@@ -30,8 +30,7 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <SigninButton></SigninButton>
-
+          <AuthButton></AuthButton>
           <Link
             href="/register"
             className="px-5 py-2 rounded-full text-white 

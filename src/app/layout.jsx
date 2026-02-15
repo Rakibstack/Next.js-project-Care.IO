@@ -19,7 +19,8 @@ export const metadata = {
   description: "Care.IO is a healthcare management system built with Next.js, designed to streamline patient care and administrative tasks for healthcare providers.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout ({ children }) {
+  
   return (
 
     <NextAuthProvider>
