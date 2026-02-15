@@ -3,7 +3,7 @@ import { getToken } from 'next-auth/jwt'
 import { NextResponse } from 'next/server'
  
 // This function can be marked `async` if using `await` inside
-const privateRoute = ["/my-bookings","/dashboard","/admin"]
+const privateRoute = ["/my-bookings","/dashboard","/booking-service"]
 
 export async function proxy(req) {
 
@@ -28,5 +28,9 @@ export async function proxy(req) {
 // export default function proxy(request) { ... }
  
 export const config = {
-  matcher: '/my-bookings/:path*',
-}
+  matcher: [
+    "/my-bookings/:path*",
+    "/dashboard/:path*",
+    "/booking-service/:path*",
+  ],
+};
