@@ -29,6 +29,8 @@ const BookingPage =  () => {
   const service = serviceData[id];
   const router = useRouter();
   const session = useSession();
+  console.log(session);
+  
 
   const [duration, setDuration] = useState(1);
   const [location, setLocation] = useState({
@@ -51,12 +53,26 @@ const BookingPage =  () => {
       location,
       totalCost,
       status: "Pending",
-      role: session.user?.role || "user",
-      name: session.user?.name || "Guest",
-      email: session.user?.email || ""
+      role: session.data?.role || "user",
+      name: session.data?.user?.name || "Guest",
+      email: session.data?.user?.email || ""
     };
 
-    // const result = await bookService(bookingData);
+    const res= await fetch("http://localhost:3000/api/auth/booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to book service");
+    }
+
+    const result = await res.json();
+    console.log("Booking result:", result);
+
     alert("Booking successful!");
 
     router.push("/my-bookings");
@@ -71,8 +87,10 @@ const BookingPage =  () => {
   }
 
   return (
+
     <section className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-sky-100 py-20 px-4">
       <motion.div
+
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
