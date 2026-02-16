@@ -2,11 +2,6 @@ import { Connectdb } from "@/lib/Connectdb"
 
 const bookingData = Connectdb("bookings")
 
-    // export function GET (req) {
-
-    //     return new Response(JSON.stringify({ message: "Hello, World!" }), 
-    //   )}
-
 export async function POST (req) {
 
     const data = await req.json()
@@ -30,7 +25,7 @@ export async function POST (req) {
     
       const bookings = await bookingData.find(query).toArray();
 
-      console.log(bookings);
+      // console.log(bookings);
       
       return new Response(JSON.stringify(bookings), {
         status: 200,

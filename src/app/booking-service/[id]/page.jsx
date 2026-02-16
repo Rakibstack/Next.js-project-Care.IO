@@ -71,7 +71,7 @@ const BookingPage =  () => {
     }
 
     const result = await res.json();
-    console.log("Booking result:", result);
+    // console.log("Booking result:", result);
 
     alert("Booking successful!");
 

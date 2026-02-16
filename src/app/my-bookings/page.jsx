@@ -3,14 +3,17 @@
 import { motion } from "framer-motion";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const statusColor = {
   Pending: "bg-yellow-100 text-yellow-700",
   Confirmed: "bg-green-100 text-green-700",
   Completed: "bg-indigo-100 text-indigo-700",
+  Cancelled: "bg-red-100 text-red-700",
 };
 
 const MyBookingsPage = () => {
+
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const session = useSession();
@@ -29,7 +32,55 @@ const MyBookingsPage = () => {
     };
 
     fetchBookings();
-  }, [ session.data?.user?.email]);
+  }, [session.data?.user?.email]);
+
+  const handleCancelBooking = async (bookingId) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to cancel this booking!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#6366f1",
+      cancelButtonColor: "#ef4444",
+      confirmButtonText: "Yes, cancel it!",
+    }).then(async (result) => {
+      if (!result.isConfirmed) return;
+
+      try {
+        const res = await fetch(
+          `http://localhost:3000/api/auth/booking/${bookingId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ status: "Cancelled" }),
+          }
+        );
+        const data = await res.json(); 
+        // console.log("Response data:", data);  
+
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Cancelled!",
+            text: "Your booking has been cancelled.",
+            icon: "success",
+          });
+
+          // 🔹 Update UI instantly
+          setBookings((prev) =>
+            prev.map((b) =>
+              b._id === bookingId ? { ...b, status: "Cancelled" } : b
+            )
+          );
+        }
+      } catch (error) {
+        console.error(error);
+        Swal.fire("Error", "Something went wrong", "error");
+      }
+    });
+  };
+
 
   /* 🔹 Loading state */
   if (loading) {
@@ -90,6 +141,16 @@ const MyBookingsPage = () => {
                   >
                     {booking.status}
                   </span>
+                  {/* 🔴 Cancel Button */}
+                  {booking.status === "Pending" && (
+                    <button
+                      onClick={() => handleCancelBooking(booking._id)}
+                      className="text-sm px-4 py-2 rounded-full border border-red-300 text-red-600 
+      hover:bg-red-50 transition"
+                    >
+                      Cancel
+                    </button>
+                  )}
                 </div>
               </motion.div>
             ))}
