@@ -21,7 +21,7 @@ const MyBookingsPage = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/auth/booking?email=${session.data?.user?.email}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/auth/booking?email=${session.data?.user?.email}`);
         const data = await res.json();
         setBookings(data || []);
       } catch (error) {
@@ -48,7 +48,7 @@ const MyBookingsPage = () => {
 
       try {
         const res = await fetch(
-          `http://localhost:3000/api/auth/booking/${bookingId}`,
+          `${process.env.NEXT_PUBLIC_URL}/api/auth/booking/${bookingId}`,
           {
             method: "PATCH",
             headers: {

@@ -59,7 +59,7 @@ const BookingPage = () => {
       email: session.data?.user?.email || ""
     };
 
-    const res = await fetch("http://localhost:3000/api/auth/booking", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/auth/booking`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,36 +1,43 @@
+import { getToken } from "next-auth/jwt"
+import { NextResponse } from "next/server"
 
-import { getToken } from 'next-auth/jwt'
-import { NextResponse } from 'next/server'
- 
-// This function can be marked `async` if using `await` inside
-const privateRoute = ["/my-bookings","/dashboard","/booking-service"]
+const privateRoute = [
+  "/my-bookings",
+  "/dashboard",
+  "/booking-service",
+]
 
 export async function proxy(req) {
+  const token = await getToken({
+    req,
+  })
 
-    const token = await getToken({req, secret: process.env.NEXTAUTH_SECRET})
-    const reqPath = req.nextUrl.pathname
-    const isAuthenticateed = Boolean(token)
-    const isUser = token?.role === "user"
+  const reqPath = req.nextUrl?.pathname
+  const isAuthenticated = Boolean(token)
 
-    console.log({isAuthenticateed,isUser,reqPath}); 
-
-    const isPrivateRoute = privateRoute.some(route => reqPath.startsWith(route))
-    if(isPrivateRoute && !isAuthenticateed) {
-        return NextResponse.redirect(new URL("/api/auth/signin", req.url))
-    }
-    
-    console.log({isAuthenticateed,isUser,reqPath,isPrivateRoute}); 
-    
+  // Safety guard
+  if (typeof reqPath !== "string") {
     return NextResponse.next()
+  }
+
+  const isPrivateRoute = privateRoute.some(route =>
+    reqPath.startsWith(route)
+  )
+
+  if (isPrivateRoute && !isAuthenticated) {
+    return NextResponse.redirect(
+      new URL("/api/auth/signin", req.url)
+    )
+  }
+
+  return NextResponse.next()
 }
- 
-// Alternatively, you can use a default export:
-// export default function proxy(request) { ... }
- 
+
+// matcher same as before
 export const config = {
   matcher: [
     "/my-bookings/:path*",
     "/dashboard/:path*",
     "/booking-service/:path*",
   ],
-};
+}
