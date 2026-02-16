@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import Swal from "sweetalert2";
 
 const serviceData = {
   "baby-care": {
@@ -21,16 +22,16 @@ const serviceData = {
   },
 };
 
-const BookingPage =  () => {
- 
-   const params = useParams();
-   const id = params.id;
+const BookingPage = () => {
+
+  const params = useParams();
+  const id = params.id;
 
   const service = serviceData[id];
   const router = useRouter();
   const session = useSession();
   console.log(session);
-  
+
 
   const [duration, setDuration] = useState(1);
   const [location, setLocation] = useState({
@@ -58,7 +59,7 @@ const BookingPage =  () => {
       email: session.data?.user?.email || ""
     };
 
-    const res= await fetch("http://localhost:3000/api/auth/booking", {
+    const res = await fetch("http://localhost:3000/api/auth/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,9 +72,25 @@ const BookingPage =  () => {
     }
 
     const result = await res.json();
-    // console.log("Booking result:", result);
-
-    alert("Booking successful!");
+    if (result.insertedId) {
+      Swal.fire({
+        title: "Custom animation with Animate.css",
+        showClass: {
+          popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+        },
+        hideClass: {
+          popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+        }
+      });
+    }
 
     router.push("/my-bookings");
   };
