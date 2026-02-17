@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏥 Care.xyz (Care.IO)
 
-## Getting Started
+A modern caregiving service platform built with **Next.js** that helps families find trusted caregivers for **baby care, elderly care, and sick care** services.  
+The platform focuses on **security, simplicity, and accessibility** for everyone.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Project
+🔗 Live URL: 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🎯 Project Objective
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Care.xyz is designed to make caregiving:
+- ✅ Easy to book
+- 🔐 Secure & trusted
+- 🌍 Accessible for families
 
-## Learn More
+Users can browse services, book caregivers based on time and location, track bookings, and manage their care needs seamlessly.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend:** Next.js (App Router), React
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Authentication:** NextAuth (Email & Google Login)
+- **Backend:** Next.js API Routes
+- **Database:** MongoDB (Mongoose)
+- **Alerts:** SweetAlert2
+- **Deployment:** Vercel
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✨ Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🔐 Authentication
+- Email & Password login
+- Google Social Login
+- Protected (Private) Routes
+- Session persistence on reload
+
+### 🏠 Home Page
+- Hero section with modern gradient design
+- Services overview (Baby, Elderly, Sick Care)
+- Animated sections using Framer Motion
+- Responsive for all devices
+
+### 🧾 Service Details
+- Individual service detail pages
+- Features, pricing, and description
+- Smooth animations
+- Book service CTA
+
+### 📅 Booking System
+- Select service duration
+- Location-based booking
+- Automatic total cost calculation
+- Booking status tracking:
+  - Pending
+  - Confirmed
+  - Completed
+  - Cancelled
+
+### 📂 My Bookings (Private Route)
+- View all user bookings
+- Booking status badges
+- Cancel booking functionality
+- Real-time UI update without reload
+
+### ❌ 404 Page
+- Custom animated 404 page
+- Redirect back to Home
+
+---
+
+
