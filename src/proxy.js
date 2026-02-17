@@ -8,12 +8,11 @@ const privateRoute = [
 ]
 
 export async function proxy(req) {
-  const token = await getToken({
-    req,
-  })
+  const token = await getToken({ req })
 
   const reqPath = req.nextUrl?.pathname
   const isAuthenticated = Boolean(token)
+  // const isuser = token?.role === "user"
 
   // Safety guard
   if (typeof reqPath !== "string") {
