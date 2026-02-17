@@ -6,7 +6,7 @@ The platform focuses on **security, simplicity, and accessibility** for everyone
 ---
 
 ## 🚀 Live Project
-🔗 Live URL: 
+🔗 Live URL: https://careio-service.vercel.app/
 
 ---
 
